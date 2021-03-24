@@ -4,13 +4,13 @@ input {
     margin: 8px 8px;    
 }
 
-.tab {
+.content, .tab{
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
   
-.tab button {
+.content button, .tab button {
     background-color: inherit;
     float: left;
     border: none;

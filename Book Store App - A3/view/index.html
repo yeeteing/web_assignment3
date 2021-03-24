@@ -8,28 +8,33 @@
 </head>
 
 <body>
-    <script src="./js/main.js"></script>
-    <script src="./js/books.js"></script>
-    <script src="./js/loans.js"></script>
+
     <header>
         <h1>Book Store App</h1>
     </header>
     <nav class="tab">
-        <button href="/html/">Books</button>
-        <button href="/css/">Loans</button>
+        <button class="tablinks">Books</button>
+        <button class="tablinks">Loans</button>
     </nav>
-    <nav class="tab books">
-        <button href="/html/">Add a book</button>
-        <button href="/css/">Show books</button>
-        <button href="/js/">Detail book</button>
-        <button href="/python/">Update book</button>
-        <button href="/js/">Delete book</button>
-    </nav>
-    <nav class="tab loans">
-        <button href="/html/">Add a loan</button>
-        <button href="/css/">Show loan</button>
-        <button href="/js/">Update loan</button>
-        <button href="/python/">Delete loan</button>
-    </nav>
+    <div id="books" class="content">
+        <nav>
+            <button class="bookLinks">Add a book</button>
+            <button class="bookLinks">Show books</button>
+            <button class="bookLinks">Detail book</button>
+            <button class="bookLinks">Update book</button>
+            <button class="bookLinks">Delete book</button>
+        </nav>
+    </div>
+    <div id="loans" class="content">
+        <nav>
+            <button class="loanLinks">Add a loan</button>
+            <button class="loanLinks">Show loan</button>
+            <button class="loanLinks">Update loan</button>
+            <button class="loanLinks">Delete loan</button>
+        </nav>
+    </div>
 
+    <script src="./js/main.js"></script>
+    <!-- <script src="./js/books.js"></script>
+    <script src="./js/loans.js"></script> -->
 </body>
