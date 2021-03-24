@@ -49,6 +49,9 @@ h3 {
 }
 
 .content, .tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
@@ -76,9 +79,7 @@ h3 {
 }
 
 .book-detail, .loan-content {
-    background-color: rgb(216, 187, 201);
-    min-height: 90%;
-    width: auto;
+    background-color: #d8bbc9;
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
@@ -152,8 +153,6 @@ th {
 }
 
 button{
-
-    border-radius: 15px;
     float: left;
     border: none;
     outline: none;
@@ -167,12 +166,14 @@ label{
     font-weight: 300;
 }
 
-.tab button:hover {
-    border-radius: 15px;
-    background-color: #a29082;
+.activeBook {
+    background-color: #d8bbc9 !important;
 }
 
-button:hover {
-    border-radius: 15px;
-    background-color: #a29082;
+.activeLoan {
+    background-color: #d8bbc9 !important;
+}
+
+.activeTab {
+    background-color: #d8bbc9 !important;
 }
