@@ -8,36 +8,28 @@ date of return */
 
 
 $(document).ready(function () {
-    /**
-     * If add a loa button is clicked
-     * show a form
-     */
-    $("#add-a-loan").click(function (event) {
-        console.log('l')
+    $(".loan-content, .event-response").each(function (index) {
+        $(this).hide();
     });
 
-    /**
-     * If show loans button is clicked
-     * show a form
-     */
-    $("#show-loans").click(function (event) {
-        console.log('ls')
+    $(".loanNav").click(function (index) {
+        // get the clicked id
+        let this_id = $(this).attr('id');
+        changeModifyContents(this_id);
+
+        $(".event-response").each(function (index) {
+            $(this).show();
+        });
     });
 
-    /**
-     * If update loan button is clicked
-     * show a form
-     */
-    $("#update-loan").click(function (event) {
-        console.log('i')
-    });
-
-    /**
-     * If delete loan button is clicked
-     * show a form
-     */
-    $("#delete-loan").click(function (event) {
-        console.log('sx')
-    });
-
+    function changeModifyContents(modifyContnet) {
+        $(".loan-content").each(function () {
+            let this_id = $(this).attr('id');
+            if (this_id.includes(modifyContnet.toLowerCase())) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
 });

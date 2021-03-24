@@ -1,9 +1,9 @@
-$(document).ready(function(){
+$(document).ready(function () {
     /**
      * This function will get all the values in the inputs
      * and will create a valid object to be send to the server-side
      */
-    function addBook(){
+    function setBook() {
         let book = {};
         book.id = $("#add-id").val();
         book.name = $("#add-name").val();
@@ -17,22 +17,111 @@ $(document).ready(function(){
      * The idea is that we assemble a valid object from the form
      * and send it to the server-side.
      */
-    $("#add-book-btn").click(function(event){
+    $("#add-book-btn").click(function (event) {
         event.preventDefault();
-         let book = addBook();
-       $.ajax({
+        let book = setBook();
+        $.ajax({
             url: '/books',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(book),
-            success: function(response){
+            success: function (response) {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
                 $("#add-out").text(JSON.stringify(response));
-            },        
+            },
             //We can use the alert box to show if there's an error in the server-side
-            error: function(xhr, status, error){
+            error: function (xhr, status, error) {
+                var errorMessage = xhr.status + ': ' + xhr.statusText
+                alert('Error - ' + errorMessage);
+            }
+        });
+    });
+
+    $("#update-id").on("input", function (event) {
+        event.preventDefault();
+        let updateId = $(this).val();
+        console.log($(this).val());
+        
+        $.ajax({
+            url: '/books/' + updateId,
+            type: 'GET',
+            contentType: 'application/json',
+            success: function (response) {
+                const obj = response.book;
+                console.log(obj)
+                if(obj === undefined || obj === null){
+                    $("#update-name").val('');
+                    $("#update-authors").val('');
+                    $("#update-year").val('');
+                    $("#update-publisher").val('');
+                } else {
+                    $("#update-name").val(obj.name);
+                    $("#update-authors").val(obj.authors);
+                    $("#update-year").val(obj.year);
+                    $("#update-publisher").val(obj.publisher);
+                }
+                
+            },
+            error: function (xhr, status, error) {
+                var errorMessage = xhr.status + ': ' + xhr.statusText
+                alert('Error - ' + errorMessage);
+            }
+        });
+    });
+
+    function updateBook() {
+        let book = {};
+        book.name = $("#update-name").val();
+        book.authors = $("#update-authors").val();
+        book.year = $("#update-year").val();
+        book.publisher = $("#update-publisher").val();
+        return book;
+    }
+
+    $("#update-book-btn").click(function (event) {
+        event.preventDefault();
+        const updateId = $(this).val();
+        const book = updateBook();
+        console.log(book)
+        $.ajax({
+            url: '/books/' + updateId,
+            type: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify(book),
+            success: function (response) {
+                // We can print in the front-end console to verify
+                // what is coming back from the server side
+                console.log(JSON.stringify(response));
+                $("#add-out").text(JSON.stringify(response));
+            },
+            //We can use the alert box to show if there's an error in the server-side
+            error: function (xhr, status, error) {
+                console.log(error)
+            
+                var errorMessage = xhr.status + ': ' + xhr.statusText
+                alert('Error - ' + errorMessage);
+            }
+        });
+    });
+
+    $("#delete-book-btn").click(function (event) {
+        event.preventDefault();
+        let deleteID = $("#delete-id").val();
+        console.log(deleteID)
+        $.ajax({
+            url: '/books/' + deleteID,
+            type: 'DELETE',
+            contentType: 'application/json',
+            success: function (response) {
+                // We can print in the front-end console to verify
+                // what is coming back from the server side
+                console.log(JSON.stringify(response));
+                $("#add-out").text(JSON.stringify(response));
+            },
+            //We can use the alert box to show if there's an error in the server-side
+            error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
                 alert('Error - ' + errorMessage);
             }
