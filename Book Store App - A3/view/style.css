@@ -34,13 +34,14 @@ h1{
 }
 
 h3 {
+    text-align: center;
     color: rgb(0, 24, 61);
 }
 
 .container {
     padding: 50px;
     border-radius: 20px;
-}xxx
+}
 
 .content{
     display: flex;
@@ -74,7 +75,7 @@ h3 {
     height: 200px;
 }
 
-.book-detail {
+.book-detail, .loan-content {
     background-color: rgb(216, 187, 201);
     min-height: 90%;
     width: auto;
@@ -151,6 +152,8 @@ th {
 }
 
 button{
+
+    border-radius: 15px;
     float: left;
     border: none;
     outline: none;
@@ -162,4 +165,14 @@ button{
 
 label{
     font-weight: 300;
+}
+
+.tab button:hover {
+    border-radius: 15px;
+    background-color: #a29082;
+}
+
+button:hover {
+    border-radius: 15px;
+    background-color: #a29082;
 }
