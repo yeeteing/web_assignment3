@@ -8,216 +8,230 @@
 </head>
 
 <body>
-
+    <div class="container">
     <header>
         <h1>Book Store App</h1>
     </header>
+    
     <nav class="tab">
         <button class="tablinks">Books</button>
         <button class="tablinks">Loans</button>
     </nav>
 
-    <div>
-        <!-- Content for Books -->
-        <div id="books" class="content">
-            <div>
-                <button class="bookNav" id="add">Add a Book</button>
-                <button class="bookNav" id="show-books">Show Books</button>
-                <button class="bookNav" id="detail-book">Detail Book</button>
-                <button class="bookNav" id="update">Update Book</button>
-                <button class="bookNav" id="delete">Delete Book</button>
-            </div>
-
-            <div>
-                <!-- Content for adding a book -->
-                <div class="book-detail" id="add-book-content">
-                    <h3>Add a Book</h3>
-                    <form>
-                        <label for="add-id">ID</label>
-                        <input type="text" id="add-id" name="id">
-
-                        <label for="add-name">Name</label>
-                        <input type="text" id="add-name" name="name">
-
-                        <label for="add-authors">Authors’ name</label>
-                        <input type="text" id="add-authors" name="authors">
-
-                        <label for="add-year">Year</label>
-                        <input type="number" id="add-year" name="year" min="4" max="4">
-
-                        <label for="add-publisher">Publisher</label>
-                        <input type="text" id="add-publisher" name="publisher">
-                        <div>
-                            <button id="add-book-btn">Add Book</button>
-
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Content for update a book -->
-                <div class="book-detail" id="update-book-content">
-                    <h3>Update a Book</h3>
-                    <form>
-                        <label for="update-id">ID</label>
-                        <input type="text" id="update-id" name="id">
-
-                        <label for="update-name">Name</label>
-                        <input type="text" id="update-name" name="name">
-
-                        <label for="update-authors">Authors’ name</label>
-                        <input type="text" id="update-authors" name="authors">
-
-                        <label for="update-year">Year</label>
-                        <input type="number" id="update-year" name="year" min="4" max="4">
-
-                        <label for="update-publisher">Publisher</label>
-                        <input type="text" id="update-publisher" name="publisher">
-                        <div>
-                            <button id="update-book-btn">Update</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Content for delete a book -->
-                <div class="book-detail" id="delete-book-content">
-                    <h3>Delete a Book</h3>
-                    <form>
-                        <label for="delete-id">ID</label>
-                        <input type="text" id="delete-id" name="id">
-                        <div>
-                            <button id="delete-book-btn">Delete</button>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div>
-                <!-- Content for showing the books -->
-                <div class="book-detail" id="show-books-content">
-                    <h3>Show Books Detail</h3>
-                    <div id="list-books"></div>
-                </div>
-
-                <!-- Content for showing detail for specific book -->
-                <div class="book-detail" id="detail-book-content">
-                    <h3>Find a Book</h3>
-                    <form>
-                        <label for="find-id">ID</label>
-                        <input type="text" id="find-id" name="id">
-                        <div>
-                            <button id="find-book-btn">Find</button>
-                        </div>
-                    </form>
-
-                    <div id="list-book-detail"></div>
-                </div>
-            </div>
-
+    <!-- Content for Books -->
+    <div id="books" class="content">
+        <div>
+            <button class="bookNav" id="add">Add a Book</button>
+            <button class="bookNav" id="show-books">Show Books</button>
+            <button class="bookNav" id="detail-book">Detail Book</button>
+            <button class="bookNav" id="update">Update Book</button>
+            <button class="bookNav" id="delete">Delete Book</button>
         </div>
 
-        <!-- Content for Loans -->
-        <div id="loans" class="content">
-            <div>
-                <button class="loanNav" id="add-loan">Add a Loan</button>
-                <button class="loanNav" id="show-loans">Show Loans</button>
-                <button class="loanNav" id="update-loan">Update Loan</button>
-                <button class="loanNav" id="delete-loan">Delete Loan</button>
-            </div>
-            <div>
-                <!-- Content for adding a loan -->
-                <div class="loan-content" id="add-loan-content">
-                    <h3>Add a Loan</h3>
-                    <form>
-                        <label for="loan-add-id">ID</label>
-                        <input type="number" id="loan-add-id" name="id">
+        <div>
+            <!-- Content for adding a book -->
+            <div class="book-detail" id="add-book-content">
+                <h3>Add a Book</h3>
+                <form>
+                    <div class="column">
+                        <div class="row">
+                            <label for="add-id">ID</label>
+                            <input type="text" id="add-id" name="id">
+                            <label for="add-name">Name</label>
+                            <input type="text" id="add-name" name="name">
 
-                        <label for="loan-add-bookId">Book ID</label>
-                        <input type="number" id="loan-add-bookId" name="name">
+                            <label for="add-authors">Authors’ name</label>
+                            <input type="text" id="add-authors" name="authors">
 
-                        <label for="loan-add-date">Date</label>
-                        <input type="date" id="loan-add-date" name="date">
+                            <label for="add-year">Year</label>
+                            <input type="number" id="add-year" name="year" min="4" max="4">
 
-                        <label for="loan-add-clientName">Client Name</label>
-                        <input type="text" id="loan-add-clientName" name="clientName" min="4" max="4">
-
-                        <div>
-                            <label>Was Returned</label>
-                            <input type="radio" id="loan-add-wasReturned" name="wasReturned">
-                            <label for="loan-add-wasReturned">Yes</label>
-
-                            <input type="radio" id="loan-add-wasNotReturned" name="wasReturned">
-                            <label for="loan-add-wasNotReturned">No</label>
+                            <label for="add-publisher">Publisher</label>
+                            <input type="text" id="add-publisher" name="publisher">
                         </div>
-
-                        <label for="loan-add-dateReturned">Date of Return</label>
-                        <input type="date" id="loan-add-dateReturned" name="dateReturned">
-                        <div>
-                            <button id="add-loan-btn">Add Loan</button>
-
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Content for showing the loan -->
-                <div class="loan-content" id="show-loans-content">
-                    <h3>Show Loans Detail</h3>
-                    <div id="list-loans"></div>
-                </div>
-
-                <!-- Content for update a loan -->
-                <div class="loan-content" id="update-loan-content">
-                    <h3>Update a Loan</h3>
-                    <form>
-                        <label for="loan-update-id">ID</label>
-                        <input type="number" id="loan-update-id" name="id">
-
-                        <label for="loan-update-bookId">Book ID</label>
-                        <input type="number" id="loan-update-bookId" name="bookid">
-
-                        <label for="loan-update-date">Date</label>
-                        <input type="date" id="loan-update-date" name="date">
-
-                        <label for="loan-update-clientName">Client Name</label>
-                        <input type="text" id="loan-update-clientName" name="clientName" min="4" max="4">
-
-                        <div>
-                            <label>Was Returned</label>
-                            <input type="radio" id="loan-update-wasReturned" name="wasReturned">
-                            <label for="loan-update-wasReturned">Yes</label>
-
-                            <input type="radio" id="loan-update-wasNotReturned" name="wasReturned">
-                            <label for="loan-update-wasNotReturned">No</label>
-                        </div>
-
-                        <label for="loan-update-dateReturned">Date of Return</label>
-                        <input type="date" id="loan-update-dateReturned" name="dateReturned">
-
-                        <div>
-                            <button id="update-loan-btn">Update Loan</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Content for delete a loan -->
-                <div class="loan-content" id="delete-loan-content">
-                    <h3>Delete a Loan</h3>
-                    <form>
-                        <label for="loan-delete-id">ID</label>
-                        <input type="text" id="loan-delete-id" name="id">
-                        <div>
-                            <button id="delete-loan-btn">Delete</button>
-                        </div>
-                    </form>
-                </div>
-
+                        <button id="add-book-btn">Add Book</button>
+                    </div>
+                </form>
             </div>
 
-        </div>
-        <div class="event-response">
-            <output id="add-out"></output>
+            <!-- Content for update a book -->
+            <div class="book-detail" id="update-book-content">
+                <h3>Update a Book</h3>
+                <form>
+                    <div class="column">
+                        <div class="row">
+                            <label for="update-id">ID</label>
+                            <input type="text" id="update-id" name="id">
+                        </div>
+
+                        <div class="row">
+                            <label for="update-name">Name</label>
+                            <input type="text" id="update-name" name="name">
+
+                            <label for="update-authors">Authors’ name</label>
+                            <input type="text" id="update-authors" name="authors">
+
+                            <label for="update-year">Year</label>
+                            <input type="number" id="update-year" name="year" width="100">
+
+                            <label for="update-publisher">Publisher</label>
+                            <input type="text" id="update-publisher" name="publisher">
+                        </div>
+                        <button id="update-book-btn">Update</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Content for delete a book -->
+            <div class="book-detail" id="delete-book-content">
+                <h3>Delete a Book</h3>
+                <form>
+                    <div class="column">
+                        <div class="row">
+                            <label for="delete-id">ID</label>
+                            <input type="text" id="delete-id" name="id">
+                        </div>
+                        <button id="delete-book-btn">Delete</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
+        <div>
+            <!-- Content for showing the books -->
+            <div class="book-detail" id="show-books-content">
+                <h3>Show Books Detail</h3>
+                <div id="list-books"></div>
+            </div>
+
+            <!-- Content for showing detail for specific book -->
+            <div class="book-detail" id="detail-book-content">
+                <h3>Find a Book</h3>
+                <form>
+                    <div class="column">
+                        <div class="row">
+                            <label for="find-id">ID</label>
+                            <input type="text" id="find-id" name="id">
+                        </div>
+
+                        <button id="find-book-btn">Find</button>
+                    </div>
+
+                </form>
+
+                <div id="list-book-detail"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Content for Loans -->
+    <div id="loans" class="content">
+        <div>
+            <button class="loanNav" id="add-loan">Add a Loan</button>
+            <button class="loanNav" id="show-loans">Show Loans</button>
+            <button class="loanNav" id="update-loan">Update Loan</button>
+            <button class="loanNav" id="delete-loan">Delete Loan</button>
+        </div>
+        <div>
+            <!-- Content for adding a loan -->
+            <div class="loan-content" id="add-loan-content">
+                <h3>Add a Loan</h3>
+                <form>
+                    <div class="column">
+                        <div class="row">
+                            <label for="loan-add-id">ID</label>
+                            <input type="number" id="loan-add-id" name="id">
+
+                            <label for="loan-add-bookId">Book ID</label>
+                            <input type="number" id="loan-add-bookId" name="name">
+
+                            <label for="loan-add-date">Date</label>
+                            <input type="date" id="loan-add-date" name="date">
+
+                            <label for="loan-add-clientName">Client Name</label>
+                            <input type="text" id="loan-add-clientName" name="clientName" min="4" max="4">
+
+                            <div class="row">
+                                <label>Was Returned</label>
+                                <input type="radio" id="loan-add-wasReturned" name="wasReturned">
+                                <label for="loan-add-wasReturned">Yes</label>
+
+                                <input type="radio" id="loan-add-wasNotReturned" name="wasReturned">
+                                <label for="loan-add-wasNotReturned">No</label>
+                            </div>
+
+                            <label for="loan-add-dateReturned">Date of Return</label>
+                            <input type="date" id="loan-add-dateReturned" name="dateReturned">
+                        </div>
+                        <button id="add-loan-btn">Add Loan</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Content for showing the loan -->
+            <div class="loan-content" id="show-loans-content">
+                <h3>Show Loans Detail</h3>
+                <div id="list-loans"></div>
+            </div>
+
+            <!-- Content for update a loan -->
+            <div class="loan-content" id="update-loan-content">
+                <h3>Update a Loan</h3>
+                <form>
+                    <div class="column">
+                        <div class="row">
+                            <label for="loan-update-id">ID</label>
+                            <input type="number" id="loan-update-id" name="id">
+
+                            <label for="loan-update-bookId">Book ID</label>
+                            <input type="number" id="loan-update-bookId" name="bookid">
+
+                            <label for="loan-update-date">Date</label>
+                            <input type="date" id="loan-update-date" name="date">
+
+                            <label for="loan-update-clientName">Client Name</label>
+                            <input type="text" id="loan-update-clientName" name="clientName" min="4" max="4">
+
+                            <div class="row">
+                                <label>Was Returned</label>
+                                <input type="radio" id="loan-update-wasReturned" name="wasReturned">
+                                <label for="loan-update-wasReturned">Yes</label>
+
+                                <input type="radio" id="loan-update-wasNotReturned" name="wasReturned">
+                                <label for="loan-update-wasNotReturned">No</label>
+                            </div>
+
+                            <label for="loan-update-dateReturned">Date of Return</label>
+                            <input type="date" id="loan-update-dateReturned" name="dateReturned">
+
+                        </div>
+                        <button id="update-loan-btn">Update Loan</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Content for delete a loan -->
+            <div class="loan-content" id="delete-loan-content">
+                <h3>Delete a Loan</h3>
+                <form>
+                    <div class="column">
+                        <div class="row">
+                            <label for="loan-delete-id">ID</label>
+                            <input type="text" id="loan-delete-id" name="id">
+                        </div>
+                        <button id="delete-loan-btn">Delete</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="event-response">
+        <output id="add-out"></output>
+    </div>
 
     </div>
 

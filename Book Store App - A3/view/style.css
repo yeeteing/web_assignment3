@@ -1,18 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
 input {
     display: flex;
     padding: 12px 20px;
     margin: 8px 8px;    
 }
 
+body{
+    background-color: #271605;
+    background-image: url('./pexels-mark-cruzat-3494806.jpg');
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+h1, h3, label, button {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-weight: 900;
+    font-size: 60px;
+    color:#271605;
+    background-color: rgba(245, 245, 220, 0.8);
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+}
+
 h3 {
     color: rgb(0, 24, 61);
-    text-align: center;
 }
+
+.container {
+    padding: 50px;
+    border-radius: 20px;
+}xxx
 
 .content{
     display: flex;
     flex-direction: column;
 }
+
 .content, .tab{
     overflow: hidden;
     border: 1px solid #ccc;
@@ -21,13 +55,6 @@ h3 {
   
 .content button, .tab button {
     background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
 }
   
 .tab button:hover {
@@ -48,8 +75,9 @@ h3 {
 }
 
 .book-detail {
-    background-color: hotpink;
-    min-height: 200px;
+    background-color: rgb(216, 187, 201);
+    min-height: 90%;
+    width: auto;
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
@@ -61,8 +89,13 @@ h3 {
     height: 100px;
 
 }
-
-form {
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -103,4 +136,30 @@ th {
 }
 .odd-row{
     background-color: white;
+}
+
+#list-books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#list-loans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+label{
+    font-weight: 300;
 }
