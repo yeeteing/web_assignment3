@@ -16,15 +16,110 @@
         <button class="tablinks">Books</button>
         <button class="tablinks">Loans</button>
     </nav>
+
+    <!-- Content for Books -->
     <div id="books" class="content">
-        <nav>
-            <button id="add-a-book">Add a Book</button>
-            <button id="show-books">Show Books</button>
-            <button id="detail-book">Detail Book</button>
-            <button id="update-book">Update Book</button>
-            <button id="delete-book">Delete Book</button>
-        </nav>
+        <div>
+            <button class="modifyBookNav" id="add">Add a Book</button>
+            <button class="detailBookNav" id="show-books">Show Books</button>
+            <button class="detailBookNav" id="detail-book">Detail Book</button>
+            <button class="modifyBookNav" id="update">Update Book</button>
+            <button class="modifyBookNav" id="delete">Delete Book</button>
+        </div>
+
+        <div>
+            <!-- Content for adding a book -->
+            <div class="modify" id="add-book-content">
+                <h3>Add a Book</h3>
+                <form>
+                    <label for="add-id">ID</label>
+                    <input type="text" id="add-id" name="id">
+
+                    <label for="add-name">Name</label>
+                    <input type="text" id="add-name" name="name">
+
+                    <label for="add-authors">Authors’ name</label>
+                    <input type="text" id="add-authors" name="authors">
+
+                    <label for="add-year">Year</label>
+                    <input type="number" id="add-year" name="year" min="4" max="4">
+
+                    <label for="add-publisher">Publisher</label>
+                    <input type="text" id="add-publisher" name="publisher">
+                    <div>
+                        <button id="add-book-btn">Add Book</button>
+                        
+                    </div>
+                </form>
+            </div>
+
+            <!-- Content for update a book -->
+            <div class="modify" id="update-book-content">
+                <h3>Update a Book</h3>
+                <form>
+                    <label for="update-id">ID</label>
+                    <input type="text" id="update-id" name="id">
+
+                    <label for="update-name">Name</label>
+                    <input type="text" id="update-name" name="name">
+
+                    <label for="update-authors">Authors’ name</label>
+                    <input type="text" id="update-authors" name="authors">
+
+                    <label for="update-year">Year</label>
+                    <input type="number" id="update-year" name="year" min="4" max="4">
+
+                    <label for="update-publisher">Publisher</label>
+                    <input type="text" id="update-publisher" name="publisher">
+                    <div>
+                        <button id="update-book-btn">Update</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Content for delete a book -->
+            <div class="modify" id="delete-book-content">
+                <h3>Delete a Book</h3>
+                <form>
+                    <label for="delete-id">ID</label>
+                    <input type="text" id="delete-id" name="id">
+                    <div>
+                        <button id="delete-book-btn">Delete</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <!-- Content for showing the books -->
+            <div class="book-detail" id="show-books-content">
+                <h3>Show Books Detail</h3>
+                <div id="list-books"></div>
+            </div>
+
+            <!-- Content for showing detail for specific book -->
+            <div class="book-detail" id="detail-book-content">
+                <h3>Find a Book</h3>
+                <form>
+                    <label for="find-id">ID</label>
+                    <input type="text" id="find-id" name="id">
+                    <div>
+                        <button id="find-book-btn">Find</button>
+                    </div>
+                </form>
+
+                <div id="list-book-detail"></div>
+            </div>
+        </div>
+
+        <div class="event-response">
+            <output id="add-out"></output>
+        </div>
+
     </div>
+
+    <!-- Content for Loans -->
     <div id="loans" class="content">
         <nav>
             <button id="add-a-loan">Add a Loan</button>
@@ -32,9 +127,17 @@
             <button id="update-loan">Update Loan</button>
             <button id="delete-loan">Delete Loan</button>
         </nav>
+
     </div>
 
     <script src="./js/main.js"></script>
+
     <script src="./js/books.js"></script>
+    <script src="./js/modifyBooks.js"></script>
+    <script src="./js/detailBooks.js"></script>
+
     <script src="./js/loans.js"></script>
+    <script src="./js/detailLoans.js"></script>
+    <script src="./js/modifyLoans.js"></script>
+
 </body>

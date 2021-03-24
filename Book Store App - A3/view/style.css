@@ -4,6 +4,15 @@ input {
     margin: 8px 8px;    
 }
 
+h3 {
+    color: rgb(0, 24, 61);
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
 .content, .tab{
     overflow: hidden;
     border: 1px solid #ccc;
@@ -29,6 +38,36 @@ input {
     background-color: #ccc;
 }
   
+.modify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: gray;
+    height: 200px;
+}
+
+.book-detail {
+    background-color: hotpink;
+    min-height: 200px;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.event-response {
+    background-color: lavender;
+    height: 100px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 .tabcontent {
     display: none;
     padding: 6px 12px;
