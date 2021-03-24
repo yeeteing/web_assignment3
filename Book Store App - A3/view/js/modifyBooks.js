@@ -82,7 +82,7 @@ $(document).ready(function () {
 
     $("#update-book-btn").click(function (event) {
         event.preventDefault();
-        const updateId = $(this).val();
+        const updateId = $("#update-id").val();
         const book = updateBook();
         console.log(book)
         $.ajax({
