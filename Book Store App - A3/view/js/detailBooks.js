@@ -53,7 +53,7 @@ $(document).ready(function () {
     /**
      * This function binds an event to the find contact button.
      */
-    $("#find-book-btn").click(function (event) {
+    $("#find-book-btn").submit(function (event) {
         event.preventDefault();
         $("#list-book-detail").empty();
         /**  Assembling the table everytime the button is clicked.

@@ -35,7 +35,7 @@ $(document).ready(function () {
      * The idea is that we assemble a valid object from the form
      * and send it to the server-side.
      */
-    $("#add-loan-btn").click(function (event) {
+    $("#add-loan-btn").submit(function (event) {
         event.preventDefault();
         let loan = setLoan();
 
@@ -114,7 +114,7 @@ $(document).ready(function () {
         $("#loan-update-dateReturned").val('');
     }
 
-    $("#update-loan-btn").click(function (event) {
+    $("#update-loan-btn").submit(function (event) {
         event.preventDefault();
         const updateId = $("#loan-update-id").val();
         const loan = updateLoan();
@@ -140,7 +140,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#delete-loan-btn").click(function (event) {
+    $("#delete-loan-btn").submit(function (event) {
         event.preventDefault();
         let deleteID = $("#loan-delete-id").val();
         console.log(deleteID)

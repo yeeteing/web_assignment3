@@ -33,7 +33,7 @@
                     <!-- Content for adding a book -->
                     <div class="book-detail" id="add-book-content">
                         <h3>Add a Book</h3>
-                        <form>
+                        <form id="add-book-btn">
                             <div class="column">
                                 <div class="row">
                                     <label for="add-id">ID</label>
@@ -45,12 +45,12 @@
                                     <input required type="text" id="add-authors" name="authors">
 
                                     <label for="add-year">Year</label>
-                                    <input required type="number" id="add-year" name="year" min="4" max="4">
+                                    <input required type="text" id="add-year" name="year" pattern="[1-9]{1}[0-9]{3}">
 
                                     <label for="add-publisher">Publisher</label>
                                     <input required type="text" id="add-publisher" name="publisher">
                                 </div>
-                                <button id="add-book-btn">Add</button>
+                                <input type="submit" value="Add">
                             </div>
                         </form>
                     </div>
@@ -58,7 +58,7 @@
                     <!-- Content for update a book -->
                     <div class="book-detail" id="update-book-content">
                         <h3>Update a Book</h3>
-                        <form>
+                        <form id="update-book-btn">
                             <div class="column">
                                 <div class="row">
                                     <label for="update-id">ID</label>
@@ -78,7 +78,7 @@
                                     <label for="update-publisher">Publisher</label>
                                     <input required type="text" id="update-publisher" name="publisher">
                                 </div>
-                                <button id="update-book-btn">Update</button>
+                                <button>Update</button>
                             </div>
 
                         </form>
@@ -87,13 +87,13 @@
                     <!-- Content for delete a book -->
                     <div class="book-detail" id="delete-book-content">
                         <h3>Delete a Book</h3>
-                        <form>
+                        <form id="delete-book-btn">
                             <div class="column">
                                 <div class="row">
                                     <label for="delete-id">ID</label>
                                     <input required type="text" id="delete-id" name="id">
                                 </div>
-                                <button id="delete-book-btn">Delete</button>
+                                <button>Delete</button>
                             </div>
                         </form>
                     </div>
@@ -109,18 +109,15 @@
                     <!-- Content for showing detail for specific book -->
                     <div class="book-detail" id="detail-book-content">
                         <h3>Find a Book</h3>
-                        <form>
+                        <form id="find-book-btn">
                             <div class="column">
                                 <div class="row">
                                     <label for="find-id">ID</label>
                                     <input required type="text" id="find-id" name="id">
                                 </div>
-
-                                <button id="find-book-btn">Search</button>
+                                <button>Search</button>
                             </div>
-
                         </form>
-
                         <div id="list-book-detail"></div>
                     </div>
                 </div>
@@ -139,7 +136,7 @@
                     <!-- Content for adding a loan -->
                     <div class="loan-content" id="add-loan-content">
                         <h3>Add a Loan</h3>
-                        <form>
+                        <form id="add-loan-btn">
                             <div class="column">
                                 <div class="row">
                                     <label for="loan-add-id">ID</label>
@@ -157,17 +154,20 @@
 
                                     <div class="row">
                                         <label>Was Returned</label>
-                                        <input required type="radio" id="loan-add-wasReturned" name="wasReturned">
-                                        <label for="loan-add-wasReturned">Yes</label>
+                                        <div class="returned">
+                                            <input required type="radio" id="loan-add-wasReturned" name="wasReturned">
+                                            <label for="loan-add-wasReturned">Yes</label>
 
-                                        <input required type="radio" id="loan-add-wasNotReturned" name="wasReturned">
-                                        <label for="loan-add-wasNotReturned">No</label>
+                                            <input required type="radio" id="loan-add-wasNotReturned"
+                                                name="wasReturned">
+                                            <label for="loan-add-wasNotReturned">No</label>
+                                        </div>
                                     </div>
 
                                     <label for="loan-add-dateReturned">Date of Return</label>
                                     <input required type="date" id="loan-add-dateReturned" name="dateReturned">
                                 </div>
-                                <button id="add-loan-btn">Add</button>
+                                <button>Add</button>
                             </div>
                         </form>
                     </div>
@@ -188,7 +188,7 @@
                     <!-- Content for update a loan -->
                     <div class="loan-content" id="update-loan-content">
                         <h3>Update a Loan</h3>
-                        <form>
+                        <form id="update-loan-btn">
                             <div class="column">
                                 <div class="row">
                                     <label for="loan-update-id">ID</label>
@@ -206,18 +206,23 @@
 
                                     <div class="row">
                                         <label>Was Returned</label>
-                                        <input required type="radio" id="loan-update-wasReturned" name="wasReturned">
-                                        <label for="loan-update-wasReturned">Yes</label>
 
-                                        <input required type="radio" id="loan-update-wasNotReturned" name="wasReturned">
-                                        <label for="loan-update-wasNotReturned">No</label>
+                                        <div class="returned">
+                                            <input required type="radio" id="loan-update-wasReturned"
+                                                name="wasReturned">
+                                            <label for="loan-update-wasReturned">Yes</label>
+
+                                            <input required type="radio" id="loan-update-wasNotReturned"
+                                                name="wasReturned">
+                                            <label for="loan-update-wasNotReturned">No</label>
+                                        </div>
                                     </div>
 
                                     <label for="loan-update-dateReturned">Date of Return</label>
                                     <input required type="date" id="loan-update-dateReturned" name="dateReturned">
 
                                 </div>
-                                <button id="update-loan-btn">Update</button>
+                                <button>Update</button>
                             </div>
                         </form>
                     </div>
@@ -225,13 +230,13 @@
                     <!-- Content for delete a loan -->
                     <div class="loan-content" id="delete-loan-content">
                         <h3>Delete a Loan</h3>
-                        <form>
+                        <form id="delete-loan-btn">
                             <div class="column">
                                 <div class="row">
                                     <label for="loan-delete-id">ID</label>
                                     <input required type="text" id="loan-delete-id" name="id">
                                 </div>
-                                <button id="delete-loan-btn">Delete</button>
+                                <button>Delete</button>
 
                             </div>
                         </form>

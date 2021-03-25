@@ -2,9 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 
 input {
-    display: flex;
-    padding: 12px 20px;
-    margin: 8px 8px;    
+    padding: 10px;
+    margin: 10px; 
+    box-shadow:0 5px 15px 4px rgba(121, 0, 0, 0.1);
+    border: rgb(211, 209, 209) solid 0.5px;  
+}
+
+label {
+    font-weight: 600;
+    color: rgb(0, 24, 61);
 }
 
 body{
@@ -108,6 +114,13 @@ form button {
 
 }
 
+.returned{
+    margin: 20px;
+    padding: 4px 10px 4px 5px;
+    box-shadow:0 5px 15px 4px rgba(121, 0, 0, 0.1);
+    border: rgb(211, 209, 209) solid 0.5px;  
+}
+
 .tabcontent {
     display: none;
     padding: 6px 12px;
@@ -166,10 +179,6 @@ button{
     transition: 0.3s;
     font-size: 17px;
     background-color: #f1f1f1;
-}
-
-label{
-    font-weight: 300;
 }
 
 .activeBook {

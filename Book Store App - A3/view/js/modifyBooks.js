@@ -1,8 +1,6 @@
 $(document).ready(function () {
-    /**
-     * This function will get all the values in the inputs
-     * and will create a valid object to be send to the server-side
-     */
+
+
     function setBook() {
         let book = {};
         book.id = $("#add-id").val();
@@ -25,7 +23,7 @@ $(document).ready(function () {
      * The idea is that we assemble a valid object from the form
      * and send it to the server-side.
      */
-    $("#add-book-btn").click(function (event) {
+    $("#add-book-btn").submit(function (event) {
         event.preventDefault();
         let book = setBook();
         $.ajax({
@@ -52,7 +50,7 @@ $(document).ready(function () {
         event.preventDefault();
         let updateId = $(this).val();
         console.log($(this).val());
-        
+
         $.ajax({
             url: '/books/' + updateId,
             type: 'GET',
@@ -60,7 +58,7 @@ $(document).ready(function () {
             success: function (response) {
                 const obj = response.book;
                 console.log(obj)
-                if(obj === undefined || obj === null){
+                if (obj === undefined || obj === null) {
                     $("#update-name").val('');
                     $("#update-authors").val('');
                     $("#update-year").val('');
@@ -71,7 +69,7 @@ $(document).ready(function () {
                     $("#update-year").val(obj.year);
                     $("#update-publisher").val(obj.publisher);
                 }
-                
+
             },
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
@@ -97,7 +95,7 @@ $(document).ready(function () {
         return book;
     }
 
-    $("#update-book-btn").click(function (event) {
+    $("#update-book-btn").submit(function (event) {
         event.preventDefault();
         const updateId = $("#update-id").val();
         const book = updateBook();
@@ -117,14 +115,14 @@ $(document).ready(function () {
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
                 console.log(error)
-            
+
                 var errorMessage = xhr.status + ': ' + xhr.statusText
                 alert('Error - ' + errorMessage);
             }
         });
     });
 
-    $("#delete-book-btn").click(function (event) {
+    $("#delete-book-btn").submit(function (event) {
         event.preventDefault();
         let deleteID = $("#delete-id").val();
         console.log(deleteID)
