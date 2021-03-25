@@ -5,3 +5,8 @@
     a. run `use my-library`
 4. Then open a new terminal and navigate to `/Book Store App - A3` directory
 5. run `node app.js`
+
+
+## By:
+### Yee Teing Lo
+### 201805462
