@@ -11,15 +11,7 @@ $(document).ready(function () {
         $(this).css("background-color", "#f1f1f1");
     })
 
-    $(".tablinks").click(function (index) {
-        // get the clicked id
-        let this_id = $(this).attr('id');
-        $("button").removeClass("activeTab")
-        $(this).addClass("activeTab")
-    });
-
     $(".bookNav").click(function (index) {
-        // get the clicked id
         let this_id = $(this).attr('id');
         $("button").removeClass("activeBook")
         $(this).addClass("activeBook")
@@ -32,11 +24,11 @@ $(document).ready(function () {
     });
 
     function changeModifyContents(clickedId) {
-
         $(".book-detail").each(function () {
             let this_id = $(this).attr('id');
             if (this_id.includes(clickedId.toLowerCase())) {
                 $(this).show();
+                $(this).animate({height: "300px"},1000, 'linear');
             } else {
                 $(this).hide();
             }

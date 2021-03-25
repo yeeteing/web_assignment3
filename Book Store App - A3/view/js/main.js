@@ -11,15 +11,18 @@ $(document).ready(function () {
 
     // if any of the link is clicked, shows the content
     $(".tablinks").click(function () {
+        $("button").removeClass("activeTab")
+        $(this).addClass("activeTab")
         changeContents($(this).text());
     });
-
+    
     // function for switching contents
     function changeContents(tab_element_clicked) {
         $(".content").each(function (index) {
             let this_id = $(this).attr('id');
             if (this_id.includes(tab_element_clicked.toLowerCase())) {
                 $(this).show();
+                $(this).animate({height: "400px"});
             } else {
                 $(this).hide();
             }

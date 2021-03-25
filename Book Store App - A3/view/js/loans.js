@@ -20,6 +20,7 @@ $(document).ready(function () {
             let this_id = $(this).attr('id');
             if (this_id.includes(modifyContnet.toLowerCase())) {
                 $(this).show();
+                $(this).animate({height: "300px"},1000, 'linear');
             } else {
                 $(this).hide();
             }
