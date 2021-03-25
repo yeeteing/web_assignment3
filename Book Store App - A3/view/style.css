@@ -58,25 +58,8 @@ h3 {
     background-color: #f1f1f1;
 }
   
-.content button, .tab button {
-    background-color: inherit;
-}
-  
-.tab button:hover {
-    background-color: #ddd;
-}
-  
-.tab button.active {
-    background-color: #ccc;
-}
-  
-.modify {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: gray;
-    height: 200px;
+form button {
+    background-color: #f1f1f1;
 }
 
 .book-detail, .loan-content {
@@ -182,6 +165,7 @@ button{
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
+    background-color: #f1f1f1;
 }
 
 label{
@@ -198,4 +182,9 @@ label{
 
 .activeTab {
     background-color: #d8bbc9 !important;
+}
+
+.activeShowLoan {
+    color: white;
+    background-color: #525252 !important;
 }

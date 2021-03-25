@@ -50,7 +50,7 @@
                                     <label for="add-publisher">Publisher</label>
                                     <input required type="text" id="add-publisher" name="publisher">
                                 </div>
-                                <button id="add-book-btn">Add Book</button>
+                                <button id="add-book-btn">Add</button>
                             </div>
                         </form>
                     </div>
@@ -152,7 +152,8 @@
                                     <input required type="date" id="loan-add-date" name="date">
 
                                     <label for="loan-add-clientName">Client Name</label>
-                                    <input required type="text" id="loan-add-clientName" name="clientName" min="4" max="4">
+                                    <input required type="text" id="loan-add-clientName" name="clientName" min="4"
+                                        max="4">
 
                                     <div class="row">
                                         <label>Was Returned</label>
@@ -166,7 +167,7 @@
                                     <label for="loan-add-dateReturned">Date of Return</label>
                                     <input required type="date" id="loan-add-dateReturned" name="dateReturned">
                                 </div>
-                                <button id="add-loan-btn">Add Loan</button>
+                                <button id="add-loan-btn">Add</button>
                             </div>
                         </form>
                     </div>
@@ -174,7 +175,14 @@
                     <!-- Content for showing the loan -->
                     <div class="loan-content" id="show-loans-content">
                         <h3>Show Loans Detail</h3>
-                        <div id="list-loans"></div>
+                        <div class="column">
+                            <div class="row">
+                                <button class="show-loan-buttons" id="show-open-loans">Open Loan</button>
+                                <button class="show-loan-buttons" id="show-close-loans">Close Loan</button>
+                            </div>
+                            <div id="list-loans"></div>
+                        </div>
+
                     </div>
 
                     <!-- Content for update a loan -->
@@ -193,7 +201,8 @@
                                     <input required type="date" id="loan-update-date" name="date">
 
                                     <label for="loan-update-clientName">Client Name</label>
-                                    <input required type="text" id="loan-update-clientName" name="clientName" min="4" max="4">
+                                    <input required type="text" id="loan-update-clientName" name="clientName" min="4"
+                                        max="4">
 
                                     <div class="row">
                                         <label>Was Returned</label>
@@ -208,7 +217,7 @@
                                     <input required type="date" id="loan-update-dateReturned" name="dateReturned">
 
                                 </div>
-                                <button id="update-loan-btn">Update Loan</button>
+                                <button id="update-loan-btn">Update</button>
                             </div>
                         </form>
                     </div>
