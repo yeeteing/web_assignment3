@@ -197,3 +197,7 @@ button{
     color: white;
     background-color: #525252 !important;
 }
+
+.event-response .aler p {
+    color: red !important;
+}

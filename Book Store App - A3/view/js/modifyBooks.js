@@ -35,13 +35,19 @@ $(document).ready(function () {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
-                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
-                clearAddForm();
+                if(response.msg){
+                    $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
+                    clearAddForm();
+                } else {
+                    $("#add-out").append("<p class='alerted'> $" + JSON.stringify(response) + "</p>");
+                    clearAddForm();
+                }
+                
             },
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });
@@ -73,7 +79,7 @@ $(document).ready(function () {
             },
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='aler'> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });
@@ -117,7 +123,7 @@ $(document).ready(function () {
                 console.log(error)
 
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });
@@ -140,7 +146,7 @@ $(document).ready(function () {
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });

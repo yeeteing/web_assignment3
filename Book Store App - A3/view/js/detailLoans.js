@@ -76,7 +76,7 @@ $(document).ready(function(){
             // If there's an error, we can use the alert box to make sure we understand the problem
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });
@@ -116,7 +116,7 @@ $(document).ready(function(){
             // If there's an error, we can use the alert box to make sure we understand the problem
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });

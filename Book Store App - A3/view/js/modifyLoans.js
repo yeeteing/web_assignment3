@@ -54,7 +54,7 @@ $(document).ready(function () {
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });
@@ -87,7 +87,7 @@ $(document).ready(function () {
                 },
                 error: function (xhr, status, error) {
                     var errorMessage = xhr.status + ': ' + xhr.statusText
-                    alert('Error - ' + errorMessage);
+                    $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
                 }
             });
         }
@@ -135,7 +135,7 @@ $(document).ready(function () {
             error: function (xhr, status, error) {
                 console.log(error)
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });
@@ -158,7 +158,7 @@ $(document).ready(function () {
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
-                alert('Error - ' + errorMessage);
+                $("#add-out").append("<p class='alerted> $" + JSON.stringify(errorMessage) + "</p>");
             }
         });
     });
