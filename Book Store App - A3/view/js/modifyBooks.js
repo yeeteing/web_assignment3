@@ -12,6 +12,14 @@ $(document).ready(function () {
         book.publisher = $("#add-publisher").val();
         return book;
     }
+
+    function clearAddForm() {
+        $("#add-id").val('');
+        $("#add-name").val('');
+        $("#add-authors").val('');
+        $("#add-year").val('');
+        $("#add-publisher").val('');
+    }
     /**
      * This function binds an event to the add button.
      * The idea is that we assemble a valid object from the form
@@ -29,7 +37,8 @@ $(document).ready(function () {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
-                $("#add-out").text(JSON.stringify(response));
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
+                clearAddForm();
             },
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
@@ -71,6 +80,14 @@ $(document).ready(function () {
         });
     });
 
+    function clearUpdateForm() {
+        $("#update-id").val('');
+        $("#update-name").val('');
+        $("#update-authors").val('');
+        $("#update-year").val('');
+        $("#update-publisher").val('');
+    }
+
     function updateBook() {
         let book = {};
         book.name = $("#update-name").val();
@@ -94,7 +111,8 @@ $(document).ready(function () {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
-                $("#add-out").text(JSON.stringify(response));
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
+                clearUpdateForm();
             },
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
@@ -118,7 +136,8 @@ $(document).ready(function () {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
-                $("#add-out").text(JSON.stringify(response));
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
+                $("#delete-id").val('');
             },
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {

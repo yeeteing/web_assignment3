@@ -36,6 +36,7 @@ $(document).ready(function () {
                     }
                     $("#table-list").append(tbl_line)
                 }
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
             },
             // If there's an error, we can use the alert box to make sure we understand the problem
             error: function (xhr, status, error) {
@@ -46,7 +47,6 @@ $(document).ready(function () {
     });
 
     $("#detail-book").click(function (event) {
-
         $("#list-book-detail").empty();
     })
 
@@ -76,6 +76,8 @@ $(document).ready(function () {
                 tbl_line = '<tr class="even-row"><td>' + obj._id + '</td><td>' + obj.name + '</td><td>' + obj.authors + '</td><td>' + obj.year + '</td><td>' + obj.publisher + '</td><tr/>';
 
                 $("#list").append(tbl_line)
+                $("#find-id").val('');
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
             },
             error: function (xhr, status, error) {
                 var errorMessage = xhr.status + ': ' + xhr.statusText
