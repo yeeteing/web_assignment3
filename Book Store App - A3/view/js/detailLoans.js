@@ -32,6 +32,7 @@ $(document).ready(function(){
                     }
                     $("#table-list-loan").append(tbl_line)
                 }
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
             },
             // If there's an error, we can use the alert box to make sure we understand the problem
             error: function (xhr, status, error) {

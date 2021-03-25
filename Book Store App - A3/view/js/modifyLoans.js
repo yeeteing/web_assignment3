@@ -20,6 +20,16 @@ $(document).ready(function () {
         loan.date_of_return = $("#loan-add-dateReturned").val();
         return loan;
     }
+
+    function clearAddLoan() {
+        $("#loan-add-id").val('');
+        $("#loan-add-bookId").val('');
+        $("#loan-add-date").val('');
+        $("#loan-add-clientName").val('');
+        $("#loan-add-wasReturned").prop("checked",false);
+        $("#loan-add-wasNotReturned").prop("checked",false);
+        $("#loan-add-dateReturned").val('');
+    }
     /**
      * This function binds an event to the add button.
      * The idea is that we assemble a valid object from the form
@@ -38,7 +48,8 @@ $(document).ready(function () {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
-                $("#add-out").text(JSON.stringify(response));
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
+                clearAddLoan();
             },
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
@@ -92,7 +103,17 @@ $(document).ready(function () {
         loan.date_of_return = $("#loan-update-dateReturned").val();
         return loan;
     }
-    
+
+    function clearUpdateLoan() {
+        $("#loan-update-id").val('');
+        $("#loan-update-bookId").val('');
+        $("#loan-update-date").val('');
+        $("#loan-update-clientName").val('');
+        $("#loan-update-wasReturned").prop("checked",false);
+        $("#loan-update-wasNotReturned").prop("checked",false);
+        $("#loan-update-dateReturned").val('');
+    }
+
     $("#update-loan-btn").click(function (event) {
         event.preventDefault();
         const updateId = $("#loan-update-id").val();
@@ -107,7 +128,8 @@ $(document).ready(function () {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
-                $("#add-out").text(JSON.stringify(response));
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
+                clearUpdateLoan();
             },
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
@@ -130,7 +152,8 @@ $(document).ready(function () {
                 // We can print in the front-end console to verify
                 // what is coming back from the server side
                 console.log(JSON.stringify(response));
-                $("#add-out").text(JSON.stringify(response));
+                $("#add-out").append("<p> $" + JSON.stringify(response.msg) + "</p>");
+                $("#loan-delete-id").val('');
             },
             //We can use the alert box to show if there's an error in the server-side
             error: function (xhr, status, error) {
