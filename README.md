@@ -1,3 +1,8 @@
+## Demo GIF
+![Demo Landing Page](Demo_1.gif)
+![Demo Book Management Page](Demo_1.gif)
+![Demo Loan Management Page](Demo_1.gif)
+
 ## To run the app successfully
 1. First open a terminal and navigate to `/Book Store App - A3` directory
 2. run `mongo`
