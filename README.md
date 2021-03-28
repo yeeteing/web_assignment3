@@ -1,11 +1,15 @@
 
-## Book St
+## Book Store App Projects (Contributed Front End part)
+Used JQuery, ajax, HTML, CSS to develop a responsive web page for Library management.
 
 ## Demo GIF
-
+### There are 2 Different Things available to be manage: 
 ![Demo Landing Page](Demo_0.gif)
+### How it behave when you click one of the tab below:
 ![Demo Click Book Page](Demo_1.gif)
+### Managing the books (add, list, find, update, delete):
 ![Demo Book Management Page](Demo_2.gif)
+### Managing the loans (add, list, update, delete):
 ![Demo Loan Management Page](Demo_3.gif)
 
 ## To run the app 
