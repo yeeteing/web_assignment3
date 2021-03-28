@@ -11,6 +11,11 @@ Used JQuery, ajax, HTML, CSS to develop a responsive web page for Library manage
 ![Demo Book Management Page](Demo_2.gif)
 ### Managing the loans:
 ![Demo Loan Management Page](Demo_3.gif)
+### When trying to update a Book or Loan (in this case Loan), 
+### if the loan/book ID entered is found in the database, the rest of the form will be auto-filled:
+![Demo auto-fill feature in update](Demo_4.gif)
+### Messages from the server is being disply on a log like mannaer:
+![Demo Log](Demo_5.gif)
 
 ## To run the app 
 1. First open a terminal and navigate to `/Book Store App - A3` directory
